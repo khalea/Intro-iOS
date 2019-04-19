@@ -1,7 +1,7 @@
 ### EtchTest
 
 This is a personal experimental project inspired by a proposed final project. It's meant to operate quite similarly 
-to an Etch-a-Sketch toy, with the exception of being able to use non-continuous lines.
+to an Etch-a-Sketch toy, with a few exceptions & bonuses.
 
 #### Proposed Features
 
