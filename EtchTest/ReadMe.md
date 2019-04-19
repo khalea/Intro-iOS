@@ -11,12 +11,12 @@ to an Etch-a-Sketch toy, with the exception of being able to use non-continuous 
 
 - [x] Tapping a new point to start a new line segment
 
-- Shake to erase the screen
+- [ ] Shake to erase the screen
 
 ###### *Less Urgent*
 
-- Pen tools: Width, color
+- [ ] Pen tools: Width, color
 
-- Save a sketch
+- [ ] Save a sketch
 
-- Share a sketch on social media
+- [ ] Share a sketch on social media
