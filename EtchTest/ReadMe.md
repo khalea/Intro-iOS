@@ -20,3 +20,14 @@ to an Etch-a-Sketch toy, with the exception of being able to use non-continuous 
 - [ ] Save a sketch
 
 - [ ] Share a sketch on social media
+
+
+##### To-Do List
+
+- [ ] Add alert for case where user hasn't tapped on a starting point, and/or make default center of the screen
+
+- [ ] Gesture Recognizers for long presses on directional buttons
+
+- [ ] Shake to Erase
+
+- [ ] Onboarding screens explaining how to use the app
