@@ -22,7 +22,7 @@ to an Etch-a-Sketch toy, with the exception of being able to use non-continuous 
 - [ ] Share a sketch on social media
 
 
-##### To-Do List
+#### To-Do List
 
 - [ ] Add alert for case where user hasn't tapped on a starting point, and/or make default center of the screen
 
