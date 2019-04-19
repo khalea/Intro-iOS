@@ -1,6 +1,6 @@
 ## Hey there!
 
-This repo is a copy of some of my work from the iOS development course that I'm currently in. The original repo is private, as the university has students using their Github servers :)
+This repo is a copy of some of my work (exclusively) from the iOS development course that I'm currently in. The original repo is private, as the university has students using their Github servers :)
 
 # What's in this repo?
 
