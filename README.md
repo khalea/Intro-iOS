@@ -7,8 +7,8 @@ This repo is a copy of some of my work from the iOS development course that I'm 
 ###### *Newest to Oldest*
 
 - EtchTest: An Etch-a-Sketch Clone.
-- TabbedFlashcards: You already know!
-- Flashcards: You *extra* already know!
+- TabbedFlashcards: You already know what it is!
+- Flashcards: You *extra* already know what it is!
 - GuessWhat: Extraordinarily simple number guessing game.
 
 
