@@ -9,7 +9,7 @@ to an Etch-a-Sketch toy, with a few exceptions & bonuses.
 
 - [x] Tapping a new point to start a new line segment
 
-- [ ] Shake to erase the screen
+- [x] Shake to erase the screen
 
 - [ ] Pen tools: Width, color
 
@@ -22,7 +22,7 @@ to an Etch-a-Sketch toy, with a few exceptions & bonuses.
 
 - [ ] Urgent: Add alert for case where user hasn't tapped on a starting point, and/or make default center of the screen
 
-- [ ] Urgent: Shake to Erase
+- [x] ~Urgent: Shake to Erase~
 
 - [ ] Urgent: Gesture Recognizers for long presses on directional buttons
 
