@@ -73,6 +73,21 @@ class ViewController: UIViewController {
         
     }
     
+    ///// Shake Gesture Handling /////
+    
+    // Clear board by clearing array of lines in DrawingBoard
+    
+    override func motionEnded(_ motion: UIEvent.EventSubtype, with event: UIEvent?) {
+        
+        if motion == .motionShake {
+            print("Shaking detected!")
+            // Clear board and refresh the drawingBoard subview
+            drawingBoard.clearBoard()
+            drawingBoard.setNeedsDisplay()
+        }
+        
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.

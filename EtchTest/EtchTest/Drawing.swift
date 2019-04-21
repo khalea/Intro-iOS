@@ -98,6 +98,22 @@ class Drawing : UIView {
         
     }
     
+    ///// Clear Drawing Board /////
+    
+    func clearBoard() {
+        
+        if lines.isEmpty == false {
+            self.lines.removeAll()
+        } else {
+            
+            // TODO Display popup saying that the board is already empty!
+            print("Board is already clear!")
+            
+        }
+        
+        
+    }
+    
     
     
 }
