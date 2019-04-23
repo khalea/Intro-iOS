@@ -11,7 +11,7 @@ to an Etch-a-Sketch toy, with a few exceptions & bonuses.
 
 - [x] Shake to erase the screen
 
-- [ ] Pen tools: Width, color
+- [ ] Pen tools: Width, ~color~
 
 - [ ] Save a sketch
 
@@ -26,7 +26,7 @@ to an Etch-a-Sketch toy, with a few exceptions & bonuses.
 
 - [ ] Urgent: Gesture Recognizers for long presses on directional buttons
 
-- [ ] Less Urgent: Pen tools: Width, color
+- [ ] Less Urgent: Pen tools: Width, ~color~
 
 - [ ] Eventually: Onboarding screens explaining how to use the app
 
