@@ -10,10 +10,12 @@ import UIKit
 
 class ViewController: UIViewController {
     
-    let drawingBoard = Drawing()
+    let appDeleg = UIApplication.shared.delegate as! AppDelegate
+    
     
     @IBAction func upButton(_ sender: Any) {
         
+        let drawingBoard = appDeleg.drawingBoard
         // Decrease y by 1
         // Add CGPoint to last [CGPoint] in drawingBoard.lines array
         let x = drawingBoard.lastLinePoint().x
@@ -30,6 +32,8 @@ class ViewController: UIViewController {
     
     @IBAction func downButton(_ sender: Any) {
         
+        let drawingBoard = appDeleg.drawingBoard
+        
         // Increase y by 1
         // Add CGPoint to last [CGPoint] in drawingBoard.lines array
         let x = drawingBoard.lastLinePoint().x
@@ -45,6 +49,8 @@ class ViewController: UIViewController {
     
     @IBAction func leftButton(_ sender: Any) {
         
+        let drawingBoard = appDeleg.drawingBoard
+        
         // Decrease x by 1
         // Add CGPoint to last [CGPoint] in drawingBoard.lines array
         let x = drawingBoard.lastLinePoint().x - 1
@@ -59,6 +65,8 @@ class ViewController: UIViewController {
     
     
     @IBAction func rightButton(_ sender: Any) {
+        
+        let drawingBoard = appDeleg.drawingBoard
         
         // Increase x by 1
         // Add CGPoint to last [CGPoint] in drawingBoard.lines array
@@ -79,6 +87,8 @@ class ViewController: UIViewController {
     
     override func motionEnded(_ motion: UIEvent.EventSubtype, with event: UIEvent?) {
         
+        let drawingBoard = appDeleg.drawingBoard
+        
         if motion == .motionShake {
             print("Shaking detected!")
             // Clear board and refresh the drawingBoard subview
@@ -91,10 +101,12 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+        let drawingBoard = appDeleg.drawingBoard
         
         view.addSubview(drawingBoard);
         drawingBoard.frame = CGRect(x: 0, y: 44, width: 450, height: 675)
         drawingBoard.backgroundColor = .gray;
+        (drawingBoard.superview)!.sendSubviewToBack(drawingBoard)
         
     }
 

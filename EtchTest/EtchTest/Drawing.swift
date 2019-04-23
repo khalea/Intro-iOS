@@ -11,10 +11,26 @@ import UIKit
 
 class Drawing : UIView {
     
+    //// TODO: Keep track of individual colors of strokes //// 
+    
+    
+    ///// "Pen" Position & Lines //////
     // Current position of the "pen"
     var currentPosn : CGPoint = CGPoint(x: 0, y: 0)
     // Array of lines --> A line is an array of CGPoints, operates somewhat like a stack
     var lines : [[CGPoint]] = [[CGPoint]]()
+    
+    
+    ////// Pen Tool Settings /////
+    
+    // Colors taken from slider values in Settings -- default black
+    var red : CGFloat = 0.0 // Red
+    var green : CGFloat = 0.0 // Green
+    var blue : CGFloat = 0.0 // Blue
+    var opacity : CGFloat = 1.0 // Alpha
+    
+    
+    // Line Width Variable from Settings
     
     
     //////////// Getters & Setters for Lines Array ////////////
@@ -51,6 +67,33 @@ class Drawing : UIView {
         }
     }
     
+    ///// Getters & Setters for Pen Tools /////
+    
+    func setRed(_ red : CGFloat) {
+        
+        self.red = red
+        print("Red changed!")
+        
+    }
+    
+    func setGreen(_ green : CGFloat) {
+        
+        self.green = green
+        
+    }
+    
+    func setBlue(_ blue : CGFloat) {
+        
+        self.blue = blue
+        
+    }
+    
+    func setOpacity(_ opacity : CGFloat) {
+        
+        self.opacity = opacity
+        
+    }
+    
     
     //////////// Draw Onto the UIView ////////////
     
@@ -75,12 +118,12 @@ class Drawing : UIView {
             
         }
         
-        
         // HLine settings
-        context.setStrokeColor(UIColor.blue.cgColor); // Color
+        context.setStrokeColor(red: self.red, green: self.green, blue: self.blue, alpha: self.opacity) // Color
         context.setLineWidth(10); // Width
-        context.setLineCap(.round); // Shaoe of stroke
+        context.setLineCap(.round); // Shape of stroke
         context.strokePath()
+        
         
     }
     
