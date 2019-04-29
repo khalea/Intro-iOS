@@ -13,10 +13,30 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
     let drawingBoard = Drawing()
+    
+    var sketchFolder : URL?
+    var sketchNumber = 0
 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        
+        let fm = FileManager()
+        
+        // Get url for /Documents folder
+        let docDirectoryURL = try! fm.url(for: .documentDirectory,
+                                          in: .userDomainMask,
+                                          appropriateFor: nil,
+                                          create: true)
+        
+        // URL of the folder to save sketches in
+        self.sketchFolder = docDirectoryURL.appendingPathComponent("EtchFolder",
+                                                                isDirectory: true)
+        
+        // print("Sketch Folder: \(sketchFolder?.absoluteString)")
+        
+        
+        
         return true
     }
 

@@ -12,6 +12,98 @@ class ViewController: UIViewController {
     
     let appDeleg = UIApplication.shared.delegate as! AppDelegate
     
+    var drawingView : UIView?
+    
+    var saveFolder : URL?
+    
+    
+    
+    //// Save Sketch - Save UIView as Image and Save to Local Storage ////
+    /// Refer to lecture 15
+    
+    @IBOutlet weak var saveButton: UIButton!
+    
+    
+    @IBAction func saveSketch(_ sender: Any) {
+        
+        let fm = FileManager()
+        
+        // Get url for /Documents folder
+        let docDirectoryURL = try! fm.url(for: .documentDirectory,
+                                          in: .userDomainMask,
+                                          appropriateFor: nil,
+                                          create: true)
+        // print("Document Directory: \(docDirectoryURL)")
+        
+        // URL of the folder to save sketches in
+        let etchFolder = docDirectoryURL.appendingPathComponent("EtchySketch",
+                                                                     isDirectory: true)
+        // print("Etch Folder: \(etchFolder)")
+        
+        // Check if the folder exists
+        let folderExists = fm.fileExists(atPath: etchFolder.absoluteString)
+        
+        // Create folder if it doesn't exist, otherwise just add the file to the folder
+        if folderExists == false {
+            
+            do {
+                // Create the folder
+                try fm.createDirectory(at: etchFolder,
+                                       withIntermediateDirectories: true,
+                                       attributes: nil)
+                // Set class variable for save folder
+                self.saveFolder = etchFolder
+                
+                // Save sketch to folder
+                
+                // Save a sketch to the folder
+                let save = SaveSketch()
+                
+                let sketch = save.toImage(drawingView!)
+                
+                let imageData = sketch.jpegData(compressionQuality: 1.0)
+                
+                save.writeImg(imageData!, url: etchFolder)
+                
+            } catch {
+                
+                print("Error trying to create folder.")
+                
+            }
+            
+        } else {
+            
+            let fm = FileManager()
+            
+            // Get url for /Documents folder
+            let docDirectoryURL = try! fm.url(for: .documentDirectory,
+                                              in: .userDomainMask,
+                                              appropriateFor: nil,
+                                              create: true)
+            
+            // URL of the folder to save sketches in
+            let etchFolder = docDirectoryURL.appendingPathComponent("EtchySketch",
+                                                                    isDirectory: true)
+            
+            print("Folder: \(etchFolder.absoluteString)")
+            
+            // Save a sketch to the folder
+            let save = SaveSketch()
+            
+            let sketch = save.toImage(drawingView!)
+            
+            let imageData = sketch.jpegData(compressionQuality: 1.0)
+            
+            save.writeImg(imageData!, url: etchFolder)
+            
+            
+        }
+        
+        
+        
+    }
+    
+    ///// Directional Buttons /////
     
     @IBAction func upButton(_ sender: Any) {
         
@@ -108,8 +200,12 @@ class ViewController: UIViewController {
         drawingBoard.backgroundColor = .gray;
         (drawingBoard.superview)!.sendSubviewToBack(drawingBoard)
         
+        drawingView = drawingBoard
+        
     }
 
 
 }
+
+
 

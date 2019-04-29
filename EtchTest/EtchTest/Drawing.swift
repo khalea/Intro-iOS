@@ -101,6 +101,7 @@ class Drawing : UIView {
     override func draw(_ rect: CGRect) {
         
         super.draw(rect)
+        // Context gives info on where to draw, colors to use, etc
         guard let context = UIGraphicsGetCurrentContext() else { return }
         
         // Use points in array for drawing
